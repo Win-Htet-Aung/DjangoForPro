@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.shortcuts import redirect
+from django.http.response import HttpResponse
 
 # Create your views here.
 
@@ -10,3 +12,10 @@ class HomePageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = "about.html"
+
+
+def new_home(request):
+    if request.method == 'POST':
+        color = request.POST.get('color')
+        return HttpResponse(request, color)
+    return redirect('home')
