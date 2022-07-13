@@ -2,4 +2,4 @@ repos:
 -   repo: https://github.com/Win-Htet-Aung/DjangoForPro
     rev: v1.2.3
     hooks:
-    -   id: pre-commit
+    -   id: autopep8
